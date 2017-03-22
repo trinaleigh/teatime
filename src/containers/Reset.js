@@ -22,10 +22,14 @@ const mapDispatchToProps = (dispatch) => {
 			var newCount = setInterval(() => {
 				var currentTime = new Date().getTime()
 				var secondsLeft = Math.round(steepTime - [(currentTime - startTime)/1000])
-				dispatch(resetClock(secondsLeft))
+				if (secondsLeft >= 0) {
+					dispatch(resetClock(secondsLeft))
+				} else {
+					clearInterval(newCount)
+				}
 			},1000)
 
-			setTimeout(() => {clearInterval(newCount)},steepTime*1000+1000)
+			// setTimeout(() => {clearInterval(newCount)},steepTime*1000+1000)
 		}
 	}
 }
