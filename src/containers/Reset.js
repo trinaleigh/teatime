@@ -6,7 +6,8 @@ import { decrement } from '../actions'
 const mapStateToProps = (state, ownProps) => {
 	return {
 		name: ownProps.name,
-		steepTime: parseInt(ownProps.steepTime)
+		steepTime: parseInt(ownProps.steepTime), 
+		disabled: state.timer !== 0
 	} 
 }
 
@@ -14,12 +15,10 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		resetClick: (steepTime) => {
 
-			console.log(steepTime)
-
 			dispatch(resetClock(steepTime))
 
 			var newCount = setInterval(() => {dispatch(decrement())},1000)
-			setTimeout(() => {clearInterval(newCount)},steepTime+1000)
+			setTimeout(() => {clearInterval(newCount)},steepTime*1000+1000)
 		}
 	}
 }

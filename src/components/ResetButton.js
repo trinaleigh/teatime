@@ -1,14 +1,17 @@
 import React, { PropTypes } from 'react'
 
-const ResetButton = ({ name, steepTime, resetClick }) => (
-	<button className="start" onClick={() => resetClick(steepTime)} style={{ backgroundColor: 'var(--green)' }}>
-		{name} tea
+const ResetButton = ({ name, steepTime, disabled, resetClick }) => (
+
+	<button className="start" disabled={disabled} onClick={() => resetClick(steepTime)} style={{ backgroundColor: 'var(--' + name + ')' }}>
+		{name}<br/>tea
 	</button>
 )
 
 ResetButton.propTypes = {
-	visibility: PropTypes.bool.isRequired,
-	translate: PropTypes.string.isRequired
+	name: PropTypes.string.isRequired,
+	steepTime: PropTypes.number.isRequired,
+	disabled: PropTypes.bool.isRequired,
+	resetClick: PropTypes.func.isRequired
 }
 
 export default ResetButton
