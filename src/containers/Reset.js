@@ -17,7 +17,14 @@ const mapDispatchToProps = (dispatch) => {
 
 			dispatch(resetClock(steepTime))
 
-			var newCount = setInterval(() => {dispatch(decrement())},1000)
+			const startTime = new Date().getTime()
+
+			var newCount = setInterval(() => {
+				var currentTime = new Date().getTime()
+				var secondsLeft = Math.round(steepTime - [(currentTime - startTime)/1000])
+				dispatch(resetClock(secondsLeft))
+			},1000)
+
 			setTimeout(() => {clearInterval(newCount)},steepTime*1000+1000)
 		}
 	}
