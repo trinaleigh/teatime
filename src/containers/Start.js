@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
-import ResetButton from '../components/ResetButton.js'
+import TeaButton from '../components/TeaButton.js'
 import { resetClock } from '../actions'
-import { decrement } from '../actions'
+import { changeTea } from '../actions'
 
 const mapStateToProps = (state, ownProps) => {
 	return {
@@ -11,17 +11,18 @@ const mapStateToProps = (state, ownProps) => {
 	} 
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
-		resetClick: (steepTime) => {
+		resetClick: () => {
 
-			dispatch(resetClock(steepTime))
+			dispatch(resetClock(ownProps.steepTime))
+			dispatch(changeTea(ownProps.name))
 
 			const startTime = new Date().getTime()
 
 			var newCount = setInterval(() => {
 				var currentTime = new Date().getTime()
-				var secondsLeft = Math.round(steepTime - [(currentTime - startTime)/1000])
+				var secondsLeft = Math.round(ownProps.steepTime - [(currentTime - startTime)/1000])
 				if (secondsLeft >= 0) {
 					dispatch(resetClock(secondsLeft))
 				} else {
@@ -29,14 +30,13 @@ const mapDispatchToProps = (dispatch) => {
 				}
 			},1000)
 
-			// setTimeout(() => {clearInterval(newCount)},steepTime*1000+1000)
 		}
 	}
 }
 
-const Reset = connect(
+const Start = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(ResetButton)
+)(TeaButton)
 
-export default Reset
+export default Start

@@ -1,12 +1,12 @@
 import React from 'react'
-import Reset from '../containers/Reset'
+import Start from '../containers/Start'
 
 const AllTeas = () => (
 	<div id="tea-box">
-		<Reset name="white" steepTime="60"/>
-		<Reset name="green" steepTime="180"/>
-		<Reset name="black" steepTime="300"/>
-		<Reset name="herbal" steepTime="420"/>
+		<Start name="white" steepTime="60"/>
+		<Start name="green" steepTime="180"/>
+		<Start name="black" steepTime="300"/>
+		<Start name="herbal" steepTime="420"/>
 	</div>
 )
 
