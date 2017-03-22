@@ -1,0 +1,49 @@
+* {
+	--primary: #F4F4F4;
+	--secondary: #228896;
+	--tertiary: #A9C52F;
+	--black: #FFC107;
+	--green: #FFA726;
+	--white: #FF9800;
+	--herbal: #F57C00;
+	font-family: 'Pacifico';
+	color: var(--secondary);
+	background-color: var(--primary)
+}
+
+#reset {
+	font-family: 'Josefin Slab';
+	background-color: var(--tertiary);
+	color: var(--primary);
+	height: 25vmin;
+	width: 25vmin;
+	border-radius: 12.5vmin;
+	font-size: 6vmin;
+	outline: none;
+	border: none;
+	user-select: none;
+}
+
+#trackers {
+	display: flex;
+	flex-direction: row;
+}
+
+.info {
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 5vmin;
+	margin: 6vmin;
+	user-select: none;
+}
+
+.info p {
+	margin: 0;
+	text-align: center;
+}
+
+.focus-value {
+	font-size: 16vmin;
+}
