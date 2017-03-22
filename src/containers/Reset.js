@@ -3,8 +3,11 @@ import ResetButton from '../components/ResetButton.js'
 import { resetClock } from '../actions'
 import { decrement } from '../actions'
 
-const mapStateToProps = (state) => {
-	return 
+const mapStateToProps = (state, ownProps) => {
+	return {
+		name: ownProps.name,
+		steepTime: ownProps.steepTime
+	} 
 }
 
 const mapDispatchToProps = (dispatch) => {

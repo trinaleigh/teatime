@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 
-const ResetButton = ({ resetClick }) => (
+const ResetButton = ({ name, steepTime, resetClick }) => (
 	<button className="start" onClick={resetClick} style={{ backgroundColor: 'var(--green)' }}>
-		green tea
+		{name} tea
 	</button>
 )
 

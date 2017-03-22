@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Clock from '../containers/Clock.js';
-import Reset from '../containers/Reset.js';
+import AllTeas from './AllTeas.js';
 
 export default class Main extends React.Component {
 	
@@ -14,7 +14,7 @@ export default class Main extends React.Component {
 	    return (
 	    	<div>
 	    	<Clock/>
-	    	<Reset/>
+	    	<AllTeas/>
 	    	</div>
 	    );
 	}
