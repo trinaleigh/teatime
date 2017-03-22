@@ -23,9 +23,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 			var newCount = setInterval(() => {
 				var currentTime = new Date().getTime()
 				var secondsLeft = Math.round(ownProps.steepTime - [(currentTime - startTime)/1000])
-				if (secondsLeft >= 0) {
+				if (secondsLeft > 0) {
 					dispatch(resetClock(secondsLeft))
 				} else {
+					dispatch(resetClock(0))
 					clearInterval(newCount)
 				}
 			},1000)
