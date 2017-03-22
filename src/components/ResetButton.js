@@ -1,11 +1,9 @@
 import React, { PropTypes } from 'react'
 
-const ResetButton = ({ visibility, resetClick }) => (
-	<div id="overlay" style={{ visibility: visibility }}>
-		<button id="reset" onClick={resetClick}>
-			green tea
-		</button>
-	</div>
+const ResetButton = ({ resetClick }) => (
+	<button className="start" onClick={resetClick} style={{ backgroundColor: 'var(--green)' }}>
+		green tea
+	</button>
 )
 
 ResetButton.propTypes = {

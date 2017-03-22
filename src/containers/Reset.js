@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		resetClick: () => {
 
-			dispatch(resetClock(180000))
+			dispatch(resetClock(180))
 
 			var newCount = setInterval(() => {dispatch(decrement())},1000)
 			setTimeout(() => {clearInterval(newCount)},181000)

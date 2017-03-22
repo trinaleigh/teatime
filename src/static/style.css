@@ -11,9 +11,12 @@
 	background-color: var(--primary)
 }
 
-#reset {
+h1 {
+	font-size: 3em;
+}
+
+.start {
 	font-family: 'Josefin Slab';
-	background-color: var(--tertiary);
 	color: var(--primary);
 	height: 25vmin;
 	width: 25vmin;
@@ -22,11 +25,6 @@
 	outline: none;
 	border: none;
 	user-select: none;
-}
-
-#trackers {
-	display: flex;
-	flex-direction: row;
 }
 
 .info {
